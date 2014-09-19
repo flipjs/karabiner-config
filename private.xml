@@ -117,13 +117,12 @@
       <appendix>Using HYPER as modifier.</appendix>
       <appendix>Cursor keys as P,L,semicolon,quote</appendix>
       <appendix>F1 to F12 as Num Rows</appendix>
-      <appendix>Home/End as comma,dot (Angle Brackets)</appendix>
-      <appendix>PageUp/PageDown as O, Left Bracket</appendix>
+      <appendix>Option Left and Right Arrow as comma,dot (Angle Brackets)</appendix>
+      <appendix>Command Left and Right Arrow as Square Brackets</appendix>
+      <appendix>PageUp/PageDown as O,K</appendix>
       <appendix>Parens, Curly, Square, Angle Brackets as W,E | S,D | X,C | V,B</appendix>
-      <appendix>Volume Mute, Up, Down as Q,A,Z</appendix>
       <appendix>Delete as (Hyper) Backspace</appendix>
-      <appendix>Backquote/Tilde as (Hyper) Double-S key</appendix>
-      <appendix>Escape as Double-S key</appendix>
+      <appendix>Backquote/Tilde as Double-S key</appendix>
       <identifier>sixty_keybindings</identifier>
       <device_only>DeviceVendor::KBT, DeviceProduct::Poker</device_only>
       <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
@@ -134,13 +133,17 @@
       <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
       <autogen>__KeyToKey__ KeyCode::QUOTE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT</autogen>
 
-      <!-- PAGEUP and PAGEDOWN as semicolon, quote -->
+      <!-- PAGEUP and PAGEDOWN as O,K -->
       <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
-      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
 
-      <!-- HOME and END as <,> -->
-      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::HOME</autogen>
-      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::END</autogen>
+      <!-- COMMAND_L left and right arrow as [,] -->
+      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+
+      <!-- OPTION_L left and right arrow as <,> -->
+      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
 
       <!-- F1 to F12 as NUM ROWS -->
       <autogen>__KeyToKey__ KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN</autogen>
@@ -172,21 +175,11 @@
       <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
       <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
 
-      <!-- VOLUME MUTE/UP/DOWN as Q,A,Z -->
-      <autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_MUTE</autogen>
-      <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_UP</autogen>
-      <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_DOWN</autogen>
-
       <!-- (Forward) DELETE as HYPER+BACKSPACE -->
       <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::FORWARD_DELETE</autogen>
 
-      <!-- TILDE as HYPER+DOUBLE-S -->
-      <autogen>__KeyToKey__ KeyCode::UK_SECTION, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
-      <!-- BACKQUOTE as HYPER+TAB -->
-      <autogen>__KeyToKey__ KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE</autogen>
-
-      <!-- ESCAPE as HYPER+SECTION (ansi backquote) -->
-      <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::ESCAPE</autogen>
+      <!-- Backquote and Tilde as Double S Key -->
+      <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
 
 
 
