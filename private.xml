@@ -102,11 +102,10 @@
     <name>60% KEYBINDINGS</name>
     <appendix>Using HYPER as modifier.</appendix>
     <appendix>Cursor keys as P,L,semicolon,quote</appendix>
-    <appendix>UP and DOWN keys as W,S</appendix>
     <appendix>F1 to F12 as Num Rows</appendix>
     <appendix>Home/End as comma,dot (Angle Brackets)</appendix>
     <appendix>PageUp/PageDown as bracket left and right</appendix>
-    <appendix>Parens, Curly and Brackets as E,R | D,F | C,V</appendix>
+    <appendix>Parens, Curly, Square, Angle Brackets as W,E | S,D | X,C | V,B</appendix>
     <appendix>Volume Mute, Up, Down as Q,A,Z</appendix>
     <appendix>Delete as (Hyper) Backspace</appendix>
     <appendix>Backquote/Tilde as (Hyper) Double-S key</appendix>
@@ -114,14 +113,18 @@
     <identifier>sixty_keybindings</identifier>
 
     <!-- CURSOR ARROW KEYS as slash, alt_r, command_r, menu keys  -->
-    <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP</autogen>
-    <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT</autogen>
-    <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
-    <autogen>__KeyToKey__ KeyCode::QUOTE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::QUOTE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_RIGHT</autogen>
 
-    <!-- UP and DOWN ARROW KEYS as W,S -->
-    <autogen>__KeyToKey__ KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_UP</autogen>
-    <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
+    <!-- PAGEUP and PAGEDOWN as semicolon, quote -->
+    <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
+
+    <!-- HOME and END as <,> -->
+    <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::HOME</autogen>
+    <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::END</autogen>
 
     <!-- F1 to F12 as NUM ROWS -->
     <autogen>__KeyToKey__ KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F1</autogen>
@@ -137,25 +140,21 @@
     <autogen>__KeyToKey__ KeyCode::MINUS, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F11</autogen>
     <autogen>__KeyToKey__ KeyCode::EQUAL, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F12</autogen>
 
-    <!-- HOME and END as <,> -->
-    <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::HOME</autogen>
-    <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::END</autogen>
+    <!-- PARENTHESIS as W,E -->
+    <autogen>__KeyToKey__ KeyCode::W, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
 
-    <!-- PAGEUP and PAGEDOWN as semicolon, quote -->
-    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
-    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
+    <!-- CURLY BRACES as S,D -->
+    <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
 
-    <!-- PARENTHESIS as E,R -->
-    <autogen>__KeyToKey__ KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::R, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+    <!-- SQUARE BRACES as X,C -->
+    <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_RIGHT</autogen>
 
-    <!-- CURLY BRACES as D,F -->
-    <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
-    <autogen>__KeyToKey__ KeyCode::F, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
-
-    <!-- CURLY BRACES as C,V -->
-    <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_LEFT</autogen>
-    <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BRACKET_RIGHT</autogen>
+    <!-- ANGLE BRACES as V,B -->
+    <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::DOT, ModifierFlag::SHIFT_L</autogen>
 
     <!-- VOLUME MUTE/UP/DOWN as Q,A,Z -->
     <autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_MUTE</autogen>
