@@ -2,7 +2,6 @@
 
 <root>
 
-
   <devicevendordef>
     <vendorname>KBP</vendorname>
     <vendorid>0x04d9</vendorid>
@@ -18,23 +17,16 @@
 
     <item>
 
-      <name>Right Modifiers plus ? as arrow keys (V60 only)</name>
+      <name>Right Modifiers as arrow keys (V60 only)</name>
 
       <identifier>private.right_modifiers_as_arrow_keys</identifier>
       <device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
 
-      <!-- First, bind question mark and slash to using mod shift and hyper keys -->
-      <!-- IMPORTANT: The next 3 lines need to be in right order, do not change it! -->
-      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::SLASH</autogen>
-      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::SHIFT_L, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
-      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::SHIFT_R, KeyCode::SLASH, ModifierFlag::SHIFT_R</autogen>
-      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::COMMAND_L, KeyCode::SLASH, ModifierFlag::COMMAND_L</autogen>
-      <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::C, ModifierFlag::CONTROL_L</autogen>
       <!-- Right Modifiers as Arrow Keys -->
-      <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_UP</autogen>
       <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_LEFT</autogen>
       <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_DOWN</autogen>
-      <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_RIGHT</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
 
     </item>
 
@@ -91,13 +83,90 @@
 
     <item>
 
-      <name>60% KEYBINDINGS</name>
-      <appendix>Using HYPER as modifier.</appendix>
-      <appendix>F1 to F12 as Num Rows</appendix>
-      <appendix>PageUp/PageDown as [,]</appendix>
-      <appendix>Home/End as comma,dot</appendix>
-      <appendix>Delete as (Hyper) Backspace</appendix>
-      <identifier>private.sixty_keybindings</identifier>
+      <name>Remap Option_R to Hyper</name>
+      <appendix>This maps Right Option key to Control + Shift + Option + Command.</appendix>
+
+      <identifier>private.option_r_to_hyper</identifier>
+
+      <!-- RIGHT OPTION TO HYPER KEY -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::OPTION_R,
+
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+      </autogen>
+
+    </item>
+
+
+    <item>
+
+      <name>Remap Spacebar to Hyper</name>
+      <appendix>This maps Spacebar to Control + Shift + Option + Command.</appendix>
+
+      <identifier>private.spacebar_to_hyper</identifier>
+
+      <!-- SPACEBAR TO HYPER KEY -->
+      <autogen>__KeyOverlaidModifier__
+        KeyCode::SPACE,
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::SPACE
+      </autogen>
+      
+      <!-- Space-B is our auto-repeat space -->
+      <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::SPACE</autogen>
+
+
+    </item>
+
+
+    <item>
+
+      <name>V60 Basic FN Settings</name>
+      <appendix></appendix>
+      <appendix>You must check at least this box to activate the Space-Hyper features.</appendix>
+      <appendix></appendix>
+      <appendix>ARROWS:  Space+IJKL/WASD=arrows</appendix>
+      <appendix>DEL:         Space+Backspace=Del</appendix>
+      <appendix>BLANK:     Space+B=Repeating space</appendix>
+      <appendix>Fxx:          Space+1…=F1..F12</appendix>
+      <appendix></appendix>
+      <appendix>IMPORTANT: in the "Key Repeat" tab, you must set:</appendix> 
+      <appendix>- Initial modifier wait: 150ms</appendix>
+      <appendix>- Timeout: 300ms</appendix>
+      <appendix>- Delay until repeat: 500ms</appendix>
+      <identifier>private.space_hyperkey</identifier>
+
+
+      <!-- Arrow keys: WASD -->
+      <autogen>--KeyToKey-- KeyCode::W, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_UP</autogen>
+      <autogen>--KeyToKey-- KeyCode::A, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::S, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_DOWN</autogen>
+      <autogen>--KeyToKey-- KeyCode::D, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_RIGHT</autogen>
+
+      <!-- Arrow keys: PL;'' -->
+      <autogen>--KeyToKey-- KeyCode::P, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_UP</autogen>
+      <autogen>--KeyToKey-- KeyCode::L, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::SEMICOLON,
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_DOWN</autogen>
+      <autogen>--KeyToKey-- KeyCode::QUOTE, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_RIGHT</autogen>
 
       <!-- PAGEUP and PAGEDOWN as [,] -->
       <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
