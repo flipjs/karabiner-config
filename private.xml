@@ -3,7 +3,7 @@
 <root>
 
   <devicevendordef>
-    <vendorname>KBP</vendorname>
+    <vendorname>USBKEYB</vendorname>
     <vendorid>0x04d9</vendorid>
   </devicevendordef>
 
@@ -12,23 +12,52 @@
     <productid>0x0112</productid>
   </deviceproductdef>
 
+  <deviceproductdef>
+    <productname>MJ_TKL</productname>
+    <productid>0x2011</productid>
+  </deviceproductdef>
+
   <item>
-    <name>KBP V60 Settings</name>
+    <name>60% Keyboard Setup</name>
 
     <item>
 
-      <name>Right Modifiers as arrow keys (V60 only)</name>
+      <name>Hyper + Right Modifiers as arrow keys</name>
 
       <identifier>private.right_modifiers_as_arrow_keys</identifier>
-      <device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+      <device_only>DeviceVendor::USBKEYB</device_only>
 
-      <!-- Right Modifiers as Arrow Keys -->
-      <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_UP</autogen>
-      <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_LEFT</autogen>
-      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_DOWN</autogen>
-      <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
+      <!-- Hyper + Right Modifiers as Arrow Keys -->
+      <autogen>--KeyToKey-- KeyCode::SLASH, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_UP</autogen>
+      <autogen>--KeyToKey-- KeyCode::OPTION_R, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_DOWN</autogen>
+      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, 
+                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+                            KeyCode::CURSOR_RIGHT</autogen>
 
     </item>
+
+    <item>
+
+      <name>Command and Menu keys as left-right arrow keys</name>
+
+      <identifier>private.win_menu_as_arrow_keys</identifier>
+      <device_only>DeviceVendor::USBKEYB</device_only>
+
+      <!-- Win and Menu keys as Left and Right Arrow keys -->
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R, 
+                            KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, 
+                            KeyCode::CURSOR_RIGHT</autogen>
+
+    </item>
+
 
 
     <item>
@@ -124,14 +153,16 @@
 
     <item>
 
-      <name>V60 Basic FN Settings</name>
+      <name>60% Keyboards Basic FN Settings</name>
       <appendix></appendix>
       <appendix>You must check at least this box to activate the Space-Hyper features.</appendix>
       <appendix></appendix>
-      <appendix>ARROWS:  Space+IJKL/WASD=arrows</appendix>
-      <appendix>DEL:         Space+Backspace=Del</appendix>
-      <appendix>BLANK:     Space+B=Repeating space</appendix>
-      <appendix>Fxx:          Space+1…=F1..F12</appendix>
+      <appendix>ARROWS:  HYPER+PL;'=arrows</appendix>
+      <appendix>ARROWS:  HYPER+WASD=arrows</appendix>
+      <appendix>DEL:         HYPER+Backspace=Del</appendix>
+      <appendix>Fxx:          HYPER+1…=F1..F12</appendix>
+      <appendix>PgUp/PgDn:          HYPER+[,]</appendix>
+      <appendix>Home/End:          HYPER+comma,dot</appendix>
       <appendix></appendix>
       <appendix>IMPORTANT: in the "Key Repeat" tab, you must set:</appendix> 
       <appendix>- Initial modifier wait: 150ms</appendix>
