@@ -18,212 +18,49 @@
   </deviceproductdef>
 
   <item>
+
     <name>60% Keyboard Setup</name>
 
     <item>
-
-      <name>Menu and Ctrl_R keys as left-right arrow keys</name>
-
-      <identifier>private.menu_ctrl_r_as_lr_arrow_keys</identifier>
-      <device_only>DeviceVendor::USBKEYB</device_only>
-
-      <!-- Win and Menu keys as Left and Right Arrow keys -->
-      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION,
-                            KeyCode::CURSOR_LEFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::CONTROL_R,
-                            KeyCode::CURSOR_RIGHT</autogen>
-
-    </item>
-
-
-    <!-- <item> -->
-    <!--  -->
-    <!--   <name>Hyper + Right Modifiers as arrow keys</name> -->
-    <!--  -->
-    <!--   <identifier>private.right_modifiers_as_arrow_keys</identifier> -->
-    <!--   <device_only>DeviceVendor::USBKEYB</device_only> -->
-    <!--  -->
-    <!--   <!&#45;&#45; Hyper + Right Modifiers as Arrow Keys &#45;&#45;> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::SLASH, -->
-    <!--                         ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, -->
-    <!--                         KeyCode::CURSOR_UP</autogen> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::OPTION_R, -->
-    <!--                         ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, -->
-    <!--                         KeyCode::CURSOR_LEFT</autogen> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::COMMAND_R, -->
-    <!--                         ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, -->
-    <!--                         KeyCode::CURSOR_DOWN</autogen> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::PC_APPLICATION, -->
-    <!--                         ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, -->
-    <!--                         KeyCode::CURSOR_RIGHT</autogen> -->
-    <!--  -->
-    <!-- </item> -->
-    <!--  -->
-    <!-- <item> -->
-    <!--  -->
-    <!--   <name>Command and Menu keys as left&#45;right arrow keys</name> -->
-    <!--  -->
-    <!--   <identifier>private.win_menu_as_arrow_keys</identifier> -->
-    <!--   <device_only>DeviceVendor::USBKEYB</device_only> -->
-    <!--  -->
-    <!--   <!&#45;&#45; Win and Menu keys as Left and Right Arrow keys &#45;&#45;> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::COMMAND_R, -->
-    <!--                         KeyCode::CURSOR_LEFT</autogen> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::PC_APPLICATION, -->
-    <!--                         KeyCode::CURSOR_RIGHT</autogen> -->
-    <!--  -->
-    <!-- </item> -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!-- <item> -->
-    <!--  -->
-	<!-- 	<name>Command and Menu keys as backquote/delete keys</name> -->
-    <!--  -->
-    <!--   <identifier>private.win_menu_as_backquote_delete</identifier> -->
-    <!--   <device_only>DeviceVendor::USBKEYB</device_only> -->
-    <!--  -->
-    <!--   <!&#45;&#45; Win and Menu keys as Left and Right Arrow keys &#45;&#45;> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::COMMAND_R, -->
-    <!--                         KeyCode::BACKQUOTE</autogen> -->
-    <!--   <autogen>&#45;&#45;KeyToKey&#45;&#45; KeyCode::PC_APPLICATION, -->
-    <!--                         KeyCode::FORWARD_DELETE</autogen> -->
-    <!--  -->
-    <!-- </item> -->
-
-
-
-    <item>
-
       <name>Remap Section Key to Backquote-Tilde</name>
-
       <identifier>private.section_key_to_backquote</identifier>
-
-      <!-- Section Key to Backquote -->
       <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
-
     </item>
 
+    <item>
+      <name>Menu and Ctrl_R (refer to SEIL) keys as down-up arrow keys</name>
+      <identifier>private.menu_ctrl_r_as_du_arrow_keys</identifier>
+      <device_only>DeviceVendor::USBKEYB</device_only>
+      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION,
+                            KeyCode::CURSOR_DOWN</autogen>
+      <autogen>--KeyToKey-- KeyCode::CONTROL_R,
+                            KeyCode::CURSOR_UP</autogen>
+    </item>
 
     <item>
+      <name>ALT_L and CMD_R as left-right arrow keys</name>
+      <identifier>private.alt_keys_as_lr_arrow_keys</identifier>
+      <device_only>DeviceVendor::USBKEYB</device_only>
+      <autogen>--KeyToKey-- KeyCode::OPTION_L,
+                            KeyCode::CURSOR_LEFT</autogen>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R,
+                            KeyCode::CURSOR_RIGHT</autogen>
+    </item>
 
+    <item>
       <name>Remap Caps Lock to Hyper</name>
-      <appendix>OS X doesn't have a Hyper. This maps caps lock (actually F19) to Control + Shift + Option + Command.</appendix>
-
+      <appendix>OS X doesn't have a Hyper. This maps caps lock (actually F19, refer to SEIL) to Control + Shift + Option + Command.</appendix>
       <identifier>private.caps_lock_to_hyper</identifier>
-
-      <!-- CAPSLOCK TO HYPER KEY -->
       <autogen>
         __KeyToKey__
         KeyCode::F19,
-
         KeyCode::COMMAND_L,
         ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
       </autogen>
-
     </item>
 
-
     <item>
-
-      <name>Remap Command_R to Hyper</name>
-      <appendix>This maps Right Command key to Control + Shift + Option + Command.</appendix>
-
-      <identifier>private.command_r_to_hyper</identifier>
-
-      <!-- RIGHT COMMAND TO HYPER KEY -->
-      <autogen>
-        __KeyToKey__
-        KeyCode::COMMAND_R,
-
-        KeyCode::COMMAND_L,
-        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-      </autogen>
-
-    </item>
-
-
-    <!-- <item> -->
-    <!--  -->
-    <!--   <name>Remap Menu key to Hyper</name> -->
-    <!--   <appendix>This maps Menu key to Control + Shift + Option + Command.</appendix> -->
-    <!--  -->
-    <!--   <identifier>private.pc_application_to_hyper</identifier> -->
-    <!--  -->
-    <!--   <!&#45;&#45; RIGHT CTRL TO HYPER KEY &#45;&#45;> -->
-    <!--   <autogen> -->
-    <!--     __KeyToKey__ -->
-    <!--     KeyCode::PC_APPLICATION, -->
-    <!--  -->
-    <!--     KeyCode::COMMAND_L, -->
-    <!--     ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L -->
-    <!--   </autogen> -->
-    <!--  -->
-    <!-- </item> -->
-    <!--  -->
-    <!-- <item> -->
-    <!--  -->
-    <!--   <name>Remap Control_R to Hyper</name> -->
-    <!--   <appendix>This maps Right Ctrl key to Control + Shift + Option + Command.</appendix> -->
-    <!--  -->
-    <!--   <identifier>private.control_r_to_hyper</identifier> -->
-    <!--  -->
-    <!--   <!&#45;&#45; RIGHT CTRL TO HYPER KEY &#45;&#45;> -->
-    <!--   <autogen> -->
-    <!--     __KeyToKey__ -->
-    <!--     KeyCode::CONTROL_R, -->
-    <!--  -->
-    <!--     KeyCode::COMMAND_L, -->
-    <!--     ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L -->
-    <!--   </autogen> -->
-    <!--  -->
-    <!-- </item> -->
-
-
-    <item>
-
-      <name>Remap Option_R to Hyper</name>
-      <appendix>This maps Right Option key to Control + Shift + Option + Command.</appendix>
-
-      <identifier>private.option_r_to_hyper</identifier>
-
-      <!-- RIGHT OPTION TO HYPER KEY -->
-      <autogen>
-        __KeyToKey__
-        KeyCode::OPTION_R,
-
-        KeyCode::COMMAND_L,
-        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-      </autogen>
-
-    </item>
-
-
-    <!-- <item> -->
-    <!--  -->
-    <!--   <name>Remap Spacebar to Hyper</name> -->
-    <!--   <appendix>This maps Spacebar to Control + Shift + Option + Command.</appendix> -->
-    <!--  -->
-    <!--   <identifier>private.spacebar_to_hyper</identifier> -->
-    <!--  -->
-    <!--   <!&#45;&#45; SPACEBAR TO HYPER KEY &#45;&#45;> -->
-    <!--   <autogen>__KeyOverlaidModifier__ -->
-    <!--     KeyCode::SPACE, -->
-    <!--     KeyCode::COMMAND_L, -->
-    <!--     ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, -->
-    <!--     KeyCode::SPACE -->
-    <!--   </autogen> -->
-    <!--  -->
-    <!--   <!&#45;&#45; Space&#45;B is our auto&#45;repeat space &#45;&#45;> -->
-    <!--   <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::SPACE</autogen> -->
-    <!--  -->
-    <!--  -->
-    <!-- </item> -->
-    <!--  -->
-
-    <item>
-
-      <name>60% Keyboards Basic FN Settings</name>
+      <name>60% Keyboards Basic HYPER Settings (needs HYPER KEY set up)</name>
       <appendix></appendix>
       <appendix>You must check at least this box to activate the Space-Hyper features.</appendix>
       <appendix></appendix>
@@ -240,7 +77,6 @@
       <appendix>- Timeout: 300ms</appendix>
       <appendix>- Delay until repeat: 500ms</appendix>
       <identifier>private.space_hyperkey</identifier>
-
 
       <!-- Arrow keys: WASD -->
       <autogen>--KeyToKey-- KeyCode::W,
@@ -299,13 +135,7 @@
       <!-- (Forward) DELETE as HYPER+BACKSPACE -->
       <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::FORWARD_DELETE</autogen>
 
-
-
-
-      <!-- TEST BINDINGS HERE -->
-
     </item>
-
 
   </item>
 
