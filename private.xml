@@ -38,21 +38,13 @@
     </item>
 
     <item>
-      <name>ALT keys as left-right arrow keys</name>
-      <identifier>private.alt_keys_as_lr_arrow_keys</identifier>
+      <name>ALT_L and CMD_R as left-right arrow keys</name>
+      <identifier>private.alt_l_cmd_r_as_lr_arrow_keys</identifier>
       <device_only>DeviceVendor::USBKEYB</device_only>
       <autogen>--KeyToKey-- KeyCode::OPTION_L,
                             KeyCode::CURSOR_LEFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::OPTION_R,
-                            KeyCode::CURSOR_RIGHT</autogen>
-    </item>
-
-    <item>
-      <name>Command_R as OPTION_L</name>
-      <identifier>private.cmd_r_as_option_l</identifier>
-      <device_only>DeviceVendor::USBKEYB</device_only>
       <autogen>--KeyToKey-- KeyCode::COMMAND_R,
-                            KeyCode::OPTION_L</autogen>
+                            KeyCode::CURSOR_RIGHT</autogen>
     </item>
 
     <item>
