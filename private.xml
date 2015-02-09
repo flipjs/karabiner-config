@@ -2,141 +2,193 @@
 
 <root>
 
-  <devicevendordef>
-    <vendorname>USBKEYB</vendorname>
-    <vendorid>0x04d9</vendorid>
-  </devicevendordef>
+	<devicevendordef>
+	<vendorname>USBKEYB</vendorname>
+	<vendorid>0x04d9</vendorid>
+	</devicevendordef>
 
-  <deviceproductdef>
-    <productname>V60</productname>
-    <productid>0x0112</productid>
-  </deviceproductdef>
+	<deviceproductdef>
+	<productname>V60</productname>
+	<productid>0x0112</productid>
+	</deviceproductdef>
 
-  <deviceproductdef>
-    <productname>MJ_TKL</productname>
-    <productid>0x2011</productid>
-  </deviceproductdef>
+	<deviceproductdef>
+	<productname>MJ_TKL</productname>
+	<productid>0x2011</productid>
+	</deviceproductdef>
 
-  <item>
+	<item>
 
-    <name>60% Keyboard Setup</name>
+	<name>My Personal Keyboard Setup</name>
 
-    <item>
-      <name>Remap Section Key to Backquote-Tilde</name>
-      <identifier>private.section_key_to_backquote</identifier>
-      <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
-    </item>
+	<item>
+		<name>Use Left Shift Key only for parens, curlies, and angle brackets.</name>
+		<identifier>private.correct_shift_keys</identifier>
+		<autogen>--KeyToKey-- KeyCode::KEY_9,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::KEY_0,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::MINUS,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::EQUAL,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::BRACKET_LEFT,		 ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::COMMA,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::DOT,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+	</item>
 
-    <item>
-      <name>Menu and Ctrl_R (refer to SEIL) keys as down-up arrow keys</name>
-      <identifier>private.menu_ctrl_r_as_du_arrow_keys</identifier>
-      <device_only>DeviceVendor::USBKEYB</device_only>
-      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION,
-                            KeyCode::CURSOR_DOWN</autogen>
-      <autogen>--KeyToKey-- KeyCode::CONTROL_R,
-                            KeyCode::CURSOR_UP</autogen>
-    </item>
+	<item>
+		<name>Use more correct shift keys.</name>
+		<identifier>private.more_correct_shift_keys</identifier>
 
-    <item>
-      <name>ALT_L and CMD_R as left-right arrow keys</name>
-      <identifier>private.alt_l_cmd_r_as_lr_arrow_keys</identifier>
-      <device_only>DeviceVendor::USBKEYB</device_only>
-      <autogen>--KeyToKey-- KeyCode::OPTION_L,
-                            KeyCode::CURSOR_LEFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::COMMAND_R,
-                            KeyCode::CURSOR_RIGHT</autogen>
-    </item>
+		<autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::W, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::E, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::R, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::T, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::A, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::S, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::D, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::F, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::G, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::X, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::C, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::V, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
 
-    <item>
-      <name>Remap Caps Lock to Hyper</name>
-      <appendix>OS X doesn't have a Hyper. This maps caps lock (actually F19, refer to SEIL) to Control + Shift + Option + Command.</appendix>
-      <identifier>private.caps_lock_to_hyper</identifier>
-      <autogen>
-        __KeyToKey__
-        KeyCode::F19,
-        KeyCode::COMMAND_L,
-        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-      </autogen>
-    </item>
+		<autogen>--KeyToKey-- KeyCode::Y,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::U,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::I,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::O,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::P,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::H,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::J,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::K,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::L,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::N,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::M,			ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+		<autogen>--KeyToKey-- KeyCode::QUOTE,		ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
+	</item>
 
-    <item>
-      <name>60% Keyboards Basic HYPER Settings (needs HYPER KEY set up)</name>
-      <appendix></appendix>
-      <appendix>You must check at least this box to activate the Space-Hyper features.</appendix>
-      <appendix></appendix>
-      <appendix>ARROWS:  HYPER+PL;'=arrows</appendix>
-      <appendix>ARROWS:  HYPER+WASD=arrows</appendix>
-      <appendix>DEL:         HYPER+Backspace=Del</appendix>
-      <appendix>Fxx:          HYPER+1…=F1..F12</appendix>
-	  <appendix>Tilde/Backtick:          HYPER+Q,E</appendix>
-      <appendix>PgUp/PgDn:          HYPER+[,]</appendix>
-      <appendix>Home/End:          HYPER+comma,dot</appendix>
-      <appendix></appendix>
-      <appendix>IMPORTANT: in the "Key Repeat" tab, you must set:</appendix>
-      <appendix>- Initial modifier wait: 150ms</appendix>
-      <appendix>- Timeout: 300ms</appendix>
-      <appendix>- Delay until repeat: 500ms</appendix>
-      <identifier>private.space_hyperkey</identifier>
+	<item>
+		<name>Shifts to Parentheses ** needs FIXING **</name>
+		<appendix>Shifts, when pressed alone, type parentheses.  When used with other keys they're normal shifts.</appendix>
 
-      <!-- Arrow keys: WASD -->
-      <autogen>--KeyToKey-- KeyCode::W,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_UP</autogen>
-      <autogen>--KeyToKey-- KeyCode::A,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_LEFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::S,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_DOWN</autogen>
-      <autogen>--KeyToKey-- KeyCode::D,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_RIGHT</autogen>
+		<identifier>private.shifts_to_parens</identifier>
 
-      <!-- Arrow keys: PL;'' -->
-      <autogen>--KeyToKey-- KeyCode::P,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_UP</autogen>
-      <autogen>--KeyToKey-- KeyCode::L,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_LEFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::SEMICOLON,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_DOWN</autogen>
-      <autogen>--KeyToKey-- KeyCode::QUOTE,
-                            ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-                            KeyCode::CURSOR_RIGHT</autogen>
+		<!-- This is the basic mapping. -->
+		<autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_R | ModifierFlag::NONE, KeyCode::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+		<autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE, KeyCode::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_R</autogen>
 
-      <!-- PAGEUP and PAGEDOWN as [,] -->
-      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
-      <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
+		<!--
+			Remap the "rolls" of () and )( because it's too easy to hit one
+			before finishing the other, and there's no other reason to be
+			pressing both shift keys at once anyway
+		-->
+		<autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+		<autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
 
-      <!-- HOME and END as <,> -->
-      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::HOME</autogen>
-      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::END</autogen>
+		<!--
+			Remap Rshift+Space to ') ', because when typing an end paren and
+			then a space I tend to hit space before I let go of rshift.
+		-->
+		<autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
+	</item>
 
-      <!-- Q and E as `,~ -->
-      <autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L</autogen>
-      <autogen>__KeyToKey__ KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE</autogen>
+	<item>
+		<name>Remap Section Key to Backquote-Tilde</name>
+		<identifier>private.section_key_to_backquote</identifier>
+		<autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+	</item>
 
-      <!-- F1 to F12 as NUM ROWS -->
-      <autogen>__KeyToKey__ KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_3, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F3</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_4, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F4</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_5, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F5</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_6, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F6</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_7, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F7</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_8, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F8</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_9, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F9</autogen>
-      <autogen>__KeyToKey__ KeyCode::KEY_0, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_MUTE</autogen>
-      <autogen>__KeyToKey__ KeyCode::MINUS, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_DOWN</autogen>
-      <autogen>__KeyToKey__ KeyCode::EQUAL, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_UP</autogen>
+	<item>
+		<name>Remap F19 to Hyper</name>
+		<appendix>OS X doesn't have a Hyper. This maps F19 to Control + Shift + Option + Command.</appendix>
+		<identifier>private.f19_to_hyper</identifier>
+		<autogen>
+		__KeyToKey__
+		KeyCode::F19,
+		KeyCode::COMMAND_L,
+		ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+		</autogen>
+	</item>
 
-      <!-- (Forward) DELETE as HYPER+BACKSPACE -->
-      <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::FORWARD_DELETE</autogen>
+	<item>
+		<name>60% Keyboards Basic HYPER Settings (needs HYPER KEY set up)</name>
+		<appendix></appendix>
+		<appendix>You must check at least this box to activate the Space-Hyper features.</appendix>
+		<appendix></appendix>
+		<appendix>ARROWS:  HYPER+PL;'=arrows</appendix>
+		<appendix>ARROWS:  HYPER+WASD=arrows</appendix>
+		<appendix>DEL:		 HYPER+Backspace=Del</appendix>
+		<appendix>Fxx:			HYPER+1…=F1..F12</appendix>
+		<appendix>Tilde/Backtick:			 HYPER+Q,E</appendix>
+		<appendix>PgUp/PgDn:			HYPER+[,]</appendix>
+		<appendix>Home/End:			 HYPER+comma,dot</appendix>
+		<appendix></appendix>
+		<appendix>IMPORTANT: in the "Key Repeat" tab, you must set:</appendix>
+		<appendix>- Initial modifier wait: 150ms</appendix>
+		<appendix>- Timeout: 300ms</appendix>
+		<appendix>- Delay until repeat: 500ms</appendix>
+		<identifier>private.space_hyperkey</identifier>
 
-    </item>
+		<!-- Arrow keys: WASD -->
+		<autogen>--KeyToKey-- KeyCode::W,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_UP</autogen>
+		<autogen>--KeyToKey-- KeyCode::A,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_LEFT</autogen>
+		<autogen>--KeyToKey-- KeyCode::S,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_DOWN</autogen>
+		<autogen>--KeyToKey-- KeyCode::D,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_RIGHT</autogen>
 
-  </item>
+		<!-- Arrow keys: PL;'' -->
+		<autogen>--KeyToKey-- KeyCode::P,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_UP</autogen>
+		<autogen>--KeyToKey-- KeyCode::L,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_LEFT</autogen>
+		<autogen>--KeyToKey-- KeyCode::SEMICOLON,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_DOWN</autogen>
+		<autogen>--KeyToKey-- KeyCode::QUOTE,
+							ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+							KeyCode::CURSOR_RIGHT</autogen>
+
+		<!-- PAGEUP and PAGEDOWN as [,] -->
+		<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
+		<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
+
+		<!-- HOME and END as <,> -->
+		<autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::HOME</autogen>
+		<autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::END</autogen>
+
+		<!-- Q and E as `,~ -->
+		<autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L</autogen>
+		<autogen>__KeyToKey__ KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::BACKQUOTE</autogen>
+
+		<!-- F1 to F12 as NUM ROWS -->
+		<autogen>__KeyToKey__ KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_3, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F3</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_4, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F4</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_5, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F5</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_6, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F6</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_7, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F7</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_8, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F8</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_9, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::F9</autogen>
+		<autogen>__KeyToKey__ KeyCode::KEY_0, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_MUTE</autogen>
+		<autogen>__KeyToKey__ KeyCode::MINUS, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_DOWN</autogen>
+		<autogen>__KeyToKey__ KeyCode::EQUAL, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::VK_CONSUMERKEY_VOLUME_UP</autogen>
+
+		<!-- (Forward) DELETE as HYPER+BACKSPACE -->
+		<autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L, KeyCode::FORWARD_DELETE</autogen>
+
+	</item>
+
+	</item>
 
 </root>
