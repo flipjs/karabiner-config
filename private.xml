@@ -112,20 +112,20 @@
 	</item>
 
 	<item>
-		<name>IJKL as arrow keys</name>
+		<name>ESDF as arrow keys</name>
 		<appendix></appendix>
-		<identifier>private.hyper_ijkl</identifier>
-		<!-- Arrow keys: IJKL -->
-		<autogen>--KeyToKey-- KeyCode::I,
+		<identifier>private.hyper_esdf</identifier>
+		<!-- Arrow keys: ESDF -->
+		<autogen>--KeyToKey-- KeyCode::E,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::CURSOR_UP</autogen>
-		<autogen>--KeyToKey-- KeyCode::J,
+		<autogen>--KeyToKey-- KeyCode::S,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::CURSOR_LEFT</autogen>
-		<autogen>--KeyToKey-- KeyCode::K,
+		<autogen>--KeyToKey-- KeyCode::D,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::CURSOR_DOWN</autogen>
-		<autogen>--KeyToKey-- KeyCode::L,
+		<autogen>--KeyToKey-- KeyCode::F,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::CURSOR_RIGHT</autogen>
 	</item>
