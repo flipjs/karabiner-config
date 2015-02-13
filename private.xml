@@ -22,24 +22,14 @@
 	<name>Personal Keyboard Setup</name>
 
 	<item>
-		<name>Remap Section Key to Backquote-Tilde</name>
-		<identifier>private.section_key_to_backquote</identifier>
+		<name>Remap Section Key to Backtick-Tilde</name>
+		<identifier>private.backtick_tilde</identifier>
 		<autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
 	</item>
 
 	<item>
-		<name>Remap Bottom-right Modifiers as Dedicated Arrow Keys</name>
-		<identifier>private.bottom_right_arrow_keys</identifier>
-		<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-		<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_LEFT</autogen>
-		<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_DOWN</autogen>
-		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_UP</autogen>
-		<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
-	</item>
-
-	<item>
 		<name>Remap L-Ctrl and L-Alt to Down and Up Arrows</name>
-		<identifier>private.lctrl_lalt</identifier>
+		<identifier>private.down_up</identifier>
 		<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
 		<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
 		<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::CURSOR_UP</autogen>
@@ -47,7 +37,7 @@
 
 	<item>
 		<name>Remap Menu Key and R-Ctrl to Left and Right Arrows</name>
-		<identifier>private.menu_rctrl</identifier>
+		<identifier>private.left_right</identifier>
 		<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
 		<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_LEFT</autogen>
 		<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
@@ -55,22 +45,20 @@
 
 	<item>
 		<name>Remap Right Command Key to Right Alt Key</name>
-		<identifier>private.cmd_r_to_option_r</identifier>
+		<identifier>private.right_alt</identifier>
 		<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
 		<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
 	</item>
 
 	<item>
 		<name>Set F18 to Left Control Key</name>
-		<appendix>and then map F18 to a ket get L-Ctrl key</appendix>
-		<identifier>private.f18_to_control_l</identifier>
+		<identifier>private.control_l</identifier>
 		<autogen>__KeyToKey__ KeyCode::F18, KeyCode::CONTROL_L</autogen>
 	</item>
 
 	<item>
 		<name>Set F19 to Hyper Key</name>
-		<appendix>OS X doesn't have a Hyper. This maps F19 to Control + Shift + Option + Command.</appendix>
-		<identifier>private.f19_to_hyper</identifier>
+		<identifier>private.hyper</identifier>
 		<autogen>
 			__KeyToKey__
 			KeyCode::F19,
@@ -81,8 +69,7 @@
 
 	<item>
 		<name>(Hyper) WASD as Arrow Keys</name>
-		<appendix>Hyper + WASD</appendix>
-		<identifier>private.hyper_wasd</identifier>
+		<identifier>private.hyper_arrow_keys</identifier>
 		<autogen>--KeyToKey-- KeyCode::W,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::CURSOR_UP</autogen>
@@ -98,27 +85,8 @@
 	</item>
 
 	<item>
-		<name>(Hyper) IJKL as Arrow Keys</name>
-		<appendix>Hyper + IJKL</appendix>
-		<identifier>private.hyper_ijkl</identifier>
-		<autogen>--KeyToKey-- KeyCode::I,
-			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-			KeyCode::CURSOR_UP</autogen>
-		<autogen>--KeyToKey-- KeyCode::J,
-			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-			KeyCode::CURSOR_LEFT</autogen>
-		<autogen>--KeyToKey-- KeyCode::K,
-			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-			KeyCode::CURSOR_DOWN</autogen>
-		<autogen>--KeyToKey-- KeyCode::L,
-			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-			KeyCode::CURSOR_RIGHT</autogen>
-	</item>
-
-	<item>
 		<name>(Hyper) Number Row as F1 to F12</name>
-		<appendix>Hyper + Number</appendix>
-		<identifier>private.hyper_number</identifier>
+		<identifier>private.hyper_f1_to_f12</identifier>
 		<autogen>__KeyToKey__ KeyCode::KEY_1,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::F1</autogen>
@@ -158,22 +126,20 @@
 	</item>
 
 	<item>
-		<name>(Hyper) U and H as PageUp and PageDown Keys</name>
-		<appendix>Hyper + U and Hyper + H</appendix>
-		<identifier>private.hyper_uh</identifier>
-		<autogen>__KeyToKey__ KeyCode::U,
+		<name>(Hyper) Q and E as PageUp and PageDown Keys</name>
+		<identifier>private.hyper_pgup_pgdn</identifier>
+		<autogen>__KeyToKey__ KeyCode::Q,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::PAGEUP</autogen>
-		<autogen>__KeyToKey__ KeyCode::H,
+		<autogen>__KeyToKey__ KeyCode::E,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::PAGEDOWN</autogen>
 	</item>
 
 	<item>
-		<name>(Hyper) E and R as Delete and Backspace Keys</name>
-		<appendix>Hyper + E and Hyper + R</appendix>
-		<identifier>private.hyper_er</identifier>
-		<autogen>__KeyToKey__ KeyCode::E,
+		<name>(Hyper) F and R as Delete and Backspace Keys</name>
+		<identifier>private.hyper_delete_backspace</identifier>
+		<autogen>__KeyToKey__ KeyCode::F,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::FORWARD_DELETE</autogen>
 		<autogen>__KeyToKey__ KeyCode::R,
@@ -182,61 +148,56 @@
 	</item>
 
 	<item>
-		<name>(Hyper) N and M as Home and End Keys</name>
-		<appendix>Hyper + N and Hyper + M</appendix>
-		<identifier>private.hyper_nm</identifier>
-		<autogen>__KeyToKey__ KeyCode::N,
+		<name>(Hyper) Z and X as Home and End Keys</name>
+		<identifier>private.hyper_home_end</identifier>
+		<autogen>__KeyToKey__ KeyCode::Z,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::HOME</autogen>
-		<autogen>__KeyToKey__ KeyCode::M,
+		<autogen>__KeyToKey__ KeyCode::X,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::END</autogen>
 	</item>
 
 	<item>
 		<name>(Hyper) Backspace as Delete Key</name>
-		<appendix>Hyper + Backspace</appendix>
-		<identifier>private.hyper_backspace</identifier>
+		<identifier>private.hyper_delete</identifier>
 		<autogen>__KeyToKey__ KeyCode::DELETE,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::FORWARD_DELETE</autogen>
 	</item>
 
 	<item>
-		<name>(Hyper) V and B Keys as Backtick and Tilde Keys</name>
-		<appendix>Hyper + V and Hyper + B</appendix>
-		<identifier>private.hyper_vb</identifier>
-		<autogen>__KeyToKey__ KeyCode::V,
+		<name>(Hyper) C and V Keys as Backtick and Tilde Keys</name>
+		<identifier>private.hyper_backtick_tilde</identifier>
+		<autogen>__KeyToKey__ KeyCode::C,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::BACKQUOTE</autogen>
-		<autogen>__KeyToKey__ KeyCode::B,
+		<autogen>__KeyToKey__ KeyCode::V,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L</autogen>
 	</item>
 
 	<item>
-		<name>(Hyper) Comma, Dot and Slash as Volume Functions</name>
-		<appendix>Volume Down, Volume Up, and Mute</appendix>
-		<identifier>private.hyper_commadotslash</identifier>
-		<autogen>__KeyToKey__ KeyCode::COMMA,
+		<name>(Hyper) Square Brackets and Backslash as Volume Functions</name>
+		<identifier>private.hyper_volume</identifier>
+		<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::VK_CONSUMERKEY_VOLUME_DOWN</autogen>
-		<autogen>__KeyToKey__ KeyCode::DOT,
+		<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::VK_CONSUMERKEY_VOLUME_UP</autogen>
-		<autogen>__KeyToKey__ KeyCode::SLASH,
+		<autogen>__KeyToKey__ KeyCode::BACKSLASH,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::VK_CONSUMERKEY_VOLUME_MUTE</autogen>
 	</item>
 
 	<item>
-		<name>(Hyper) Square Brackets as Screen Brightness Functions</name>
-		<appendix>Screen Brightness Up and Down </appendix>
-		<identifier>private.hyper_brackets</identifier>
-		<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT,
+		<name>(Hyper) Semicolon and Quote as Screen Brightness Functions</name>
+		<identifier>private.hyper_screen_brightness</identifier>
+		<autogen>__KeyToKey__ KeyCode::SEMICOLON,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN</autogen>
-		<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT,
+		<autogen>__KeyToKey__ KeyCode::QUOTE,
 			ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 			KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP</autogen>
 	</item>
