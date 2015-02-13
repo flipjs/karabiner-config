@@ -2,24 +2,9 @@
 
 <root>
 
-<devicevendordef>
-<vendorname>USBKEYB</vendorname>
-<vendorid>0x04d9</vendorid>
-</devicevendordef>
-
-<deviceproductdef>
-<productname>V60</productname>
-<productid>0x0112</productid>
-</deviceproductdef>
-
-<deviceproductdef>
-<productname>MJ_TKL</productname>
-<productid>0x2011</productid>
-</deviceproductdef>
-
 <item>
 
-	<name>P.E.K.S. (Personal External Keyboard Setup)</name>
+	<name>External Keyboard Setup</name>
 
 	<item>
 		<name>Change F18 to Left Control Key</name>
@@ -100,32 +85,7 @@
 
 	<item>
 
-		<name>V60-specific Hyper Settings</name>
-
-		<!-- V60 DEVICE&#45;SPECIFIC SETTINGS -->
-
-		<item>
-			<name>Remap L-Ctrl and L-Alt to Down and Up Arrows</name>
-			<identifier>private.down_up</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
-			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::CURSOR_UP</autogen>
-		</item>
-
-		<item>
-			<name>Remap Menu Key and R-Ctrl to Left and Right Arrows</name>
-			<identifier>private.left_right</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_LEFT</autogen>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
-		</item>
-
-		<item>
-			<name>Remap Right Command Key to Right Alt Key</name>
-			<identifier>private.right_alt</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
-		</item>
+		<name>Left-hand side Hyper Custom Mappings</name>
 
 		<item>
 			<name>(Hyper) Q and E as PageUp and PageDown Keys</name>
