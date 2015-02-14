@@ -7,4 +7,4 @@ required when remapping modifiers, especially for the arrow keys. See layouts be
 [![Hyper-Left-Hand](http://i.imgur.com/k0JzAxN.png)](http://i.imgur.com/k0JzAxN.png)
 
 2. Right-hand Side Bindings
-[![Hyper-Right-Hand](http://i.imgur.com/MwgZ13s.png)](http://i.imgur.com/MwgZ13s.png)
+[![Hyper-Right-Hand](http://i.imgur.com/8SqAfJo.png)](http://i.imgur.com/8SqAfJo.png)
