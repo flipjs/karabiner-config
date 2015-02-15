@@ -212,7 +212,31 @@
 
 	<item>
 
-		<name>HYPER Right-hand Side Bindings</name>
+		<name>HYPER Right-hand Side Bindings (Vim-style)</name>
+
+		<item>
+			<name>(Hyper) PC_Menu and Right Command Keys as PageUp and PageDown Keys</name>
+			<identifier>private.hyper_right_pgup_pgdn</identifier>
+			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
+			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::PAGEUP</autogen>
+			<autogen>__KeyToKey__ KeyCode::COMMAND_R,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::PAGEDOWN</autogen>
+		</item>
+
+		<item>
+			<name>(Hyper) Right Alt and Right Control Keys as Home and End Keys</name>
+			<identifier>private.hyper_right_home_end</identifier>
+			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
+			<autogen>__KeyToKey__ KeyCode::OPTION_R,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::HOME</autogen>
+			<autogen>__KeyToKey__ KeyCode::CONTROL_R,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::END</autogen>
+		</item>
 
 		<item>
 			<name>Remap Bottom-right Modifiers as Vim-style Arrow Keys</name>
@@ -225,53 +249,31 @@
 		</item>
 
 		<item>
-			<name>(Hyper) IJKL as Arrow Keys</name>
+			<name>(Hyper) HJKL as Arrow Keys</name>
 			<identifier>private.hyper_right_arrow_keys</identifier>
-			<autogen>--KeyToKey-- KeyCode::I,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::CURSOR_UP</autogen>
-			<autogen>--KeyToKey-- KeyCode::J,
+			<autogen>--KeyToKey-- KeyCode::H,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::CURSOR_LEFT</autogen>
-			<autogen>--KeyToKey-- KeyCode::K,
+			<autogen>--KeyToKey-- KeyCode::J,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::CURSOR_DOWN</autogen>
+			<autogen>--KeyToKey-- KeyCode::K,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::CURSOR_UP</autogen>
 			<autogen>--KeyToKey-- KeyCode::L,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::CURSOR_RIGHT</autogen>
 		</item>
 
 		<item>
-			<name>(Hyper) O and P as PageUp and PageDown Keys</name>
-			<identifier>private.hyper_right_pgup_pgdn</identifier>
-			<autogen>__KeyToKey__ KeyCode::O,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::PAGEUP</autogen>
-			<autogen>__KeyToKey__ KeyCode::P,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::PAGEDOWN</autogen>
-		</item>
-
-		<item>
-			<name>(Hyper) U and H as Delete and Backspace Keys</name>
+			<name>(Hyper) B and U as Delete and Backspace Keys</name>
 			<identifier>private.hyper_right_delete_backspace</identifier>
-			<autogen>__KeyToKey__ KeyCode::U,
+			<autogen>__KeyToKey__ KeyCode::B,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::FORWARD_DELETE</autogen>
-			<autogen>__KeyToKey__ KeyCode::H,
+			<autogen>__KeyToKey__ KeyCode::U,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::DELETE</autogen>
-		</item>
-
-		<item>
-			<name>(Hyper)Angle Brackets (Comma, Dot) as Home and End Keys</name>
-			<identifier>private.hyper_right_home_end</identifier>
-			<autogen>__KeyToKey__ KeyCode::COMMA,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::HOME</autogen>
-			<autogen>__KeyToKey__ KeyCode::DOT,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::END</autogen>
 		</item>
 
 		<item>
