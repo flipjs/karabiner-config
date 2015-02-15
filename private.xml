@@ -160,6 +160,19 @@
 		</item>
 
 		<item>
+			<name>Remap Right Option Key to Hyper Key</name>
+			<appendix>External keyboard only, Macbook retains its original key function</appendix>
+			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
+			<identifier>private.option_r_to_hyper</identifier>
+			<autogen>
+				__KeyToKey__
+				KeyCode::OPTION_R,
+				KeyCode::COMMAND_L,
+				ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+			</autogen>
+		</item>
+
+		<item>
 			<name>(Hyper) WASD as Arrow Keys</name>
 			<identifier>private.hyper_left_arrow_keys</identifier>
 			<autogen>--KeyToKey-- KeyCode::W,
