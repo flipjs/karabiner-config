@@ -22,15 +22,8 @@
 	<name>Personal Custom Function Layer</name>
 
 	<item>
-		<name>Change F18 to Left Control Key</name>
-		<appendix>Requirement: Set a key (i.e. Capslock Key) to F18 in Seil to act as Left Control Key</appendix>
-		<identifier>private.control_l</identifier>
-		<autogen>__KeyToKey__ KeyCode::F18, KeyCode::CONTROL_L</autogen>
-	</item>
-
-	<item>
 		<name>Change F19 to Hyper Key</name>
-		<appendix>Requirement: Set a key (i.e. Left Option Key) to F19 in Seil to act as HYPER Key</appendix>
+		<appendix>Requirement: Set a key (i.e. Left Option Key) to F19 in Seil to act as HYPER Key system-wide</appendix>
 		<identifier>private.hyper</identifier>
 		<autogen>
 			__KeyToKey__
@@ -38,6 +31,25 @@
 			KeyCode::COMMAND_L,
 			ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
 		</autogen>
+	</item>
+
+	<item>
+		<name>Change F18 to Meta Key</name>
+		<appendix>Requirement: Set a key (i.e. Left Control Key) to F18 in Seil to act as META Key system-wide</appendix>
+		<identifier>private.meta</identifier>
+		<autogen>
+			__KeyToKey__
+			KeyCode::F18,
+			KeyCode::COMMAND_L,
+			ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+		</autogen>
+	</item>
+
+	<item>
+		<name>Change F17 to Left Control Key</name>
+		<appendix>Requirement: Set a key (i.e. Capslock Key) to F17 in Seil to act as Left Control Key system-wide</appendix>
+		<identifier>private.control_l</identifier>
+		<autogen>__KeyToKey__ KeyCode::F17, KeyCode::CONTROL_L</autogen>
 	</item>
 
 	<item>
@@ -142,7 +154,7 @@
 
 		<item>
 			<name>Remap Right Command Key to Right Alt Key</name>
-			<identifier>private.right_alt</identifier>
+			<identifier>private.right_command_to_right_alt</identifier>
 			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
 			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
 		</item>
@@ -206,6 +218,95 @@
 			<autogen>__KeyToKey__ KeyCode::V,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L</autogen>
+		</item>
+
+		<item>
+			<name>Add more bindings to the right</name>
+
+			<item>
+				<name>(Hyper) T and Y as Parenthesis</name>
+				<identifier>private.hyper_more_parenthesis</identifier>
+				<autogen>__KeyToKey__ KeyCode::T,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::KEY_9 | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::Y,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::KEY_0 | ModifierFlag::SHIFT_L</autogen>
+			</item>
+			<item>
+				<name>(Hyper) G and H as Curly Brackets</name>
+				<identifier>private.hyper_more_curly_brackets</identifier>
+				<autogen>__KeyToKey__ KeyCode::G,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::BRACKET_LEFT | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::H,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::BRACKET_RIGHT | ModifierFlag::SHIFT_L</autogen>
+			</item>
+			<item>
+				<name>(Hyper) B and N as Square Brackets</name>
+				<identifier>private.hyper_more_square_brackets</identifier>
+				<autogen>__KeyToKey__ KeyCode::B,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::BRACKET_LEFT</autogen>
+				<autogen>__KeyToKey__ KeyCode::N,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::BRACKET_RIGHT</autogen>
+			</item>
+			<item>
+				<name>(Hyper) J and K as Angle Brackets</name>
+				<identifier>private.hyper_more_angle_brackets</identifier>
+				<autogen>__KeyToKey__ KeyCode::J,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::COMMA | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::K,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::DOT | ModifierFlag::SHIFT_L</autogen>
+			</item>
+			<item>
+				<name>(Hyper) UIOP as MDAS Symbols</name>
+				<identifier>private.hyper_more_mdas</identifier>
+				<autogen>__KeyToKey__ KeyCode::U,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::KEY_8 | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::I,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::SLASH</autogen>
+				<autogen>__KeyToKey__ KeyCode::O,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::EQUAL | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::P,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::MINUS</autogen>
+			</item>
+			<item>
+				<name>(Hyper) L as Equal Symbol</name>
+				<identifier>private.hyper_more_hash</identifier>
+				<autogen>__KeyToKey__ KeyCode::L,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::EQUAL</autogen>
+			</item>
+			<item>
+				<name>(Hyper) M as Question Mark Symbol</name>
+				<identifier>private.hyper_more_question</identifier>
+				<autogen>__KeyToKey__ KeyCode::M,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::SLASH | ModifierFlag::SHIFT_L</autogen>
+			</item>
+			<item>
+				<name>(Hyper) Angle Brackets and Slash as Caret, Dollar and Hash Symbols (^$#)</name>
+				<identifier>private.hyper_more_caret_dollar_zero</identifier>
+				<autogen>__KeyToKey__ KeyCode::COMMA,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::KEY_6 | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::DOT,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::KEY_4 | ModifierFlag::SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::SLASH,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::KEY_3 | ModifierFlag::SHIFT_L</autogen>
+			</item>
+
 		</item>
 
 	</item>

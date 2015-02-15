@@ -9,3 +9,6 @@ required when remapping modifiers, especially for the arrow keys. See layouts be
 2. Right-hand Side Bindings (Vim-style)
 [![Hyper-Right-Hand](http://i.imgur.com/cA9cfbV.png)](http://i.imgur.com/cA9cfbV.png)
 
+3. My HHKB Pro-2 Keyboard (WASD arrows plus extras)
+[![Hyper-Right-Hand](http://i.imgur.com/GWduung.png)](http://i.imgur.com/GWduung.png)
+
