@@ -10,5 +10,5 @@ required when remapping modifiers, especially for the arrow keys. See layouts be
 [![Hyper-Right-Hand](http://i.imgur.com/cA9cfbV.png)](http://i.imgur.com/cA9cfbV.png)
 
 3. My HHKB Pro-2 Keyboard (WASD arrows plus extras)
-[![Hyper-Right-Hand](http://i.imgur.com/qujFGkS.png)](http://i.imgur.com/qujFGkS.png)
+[![Hyper-Right-Hand](http://i.imgur.com/LYHVO2W.png)](http://i.imgur.com/LYHVO2W.png)
 

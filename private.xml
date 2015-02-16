@@ -234,7 +234,7 @@
 		</item>
 
 		<item>
-			<name>Add more bindings to the right</name>
+			<name>Add more bindings to the middle (Brackets and Parens)</name>
 
 			<item>
 				<name>(Hyper) T and Y as Parenthesis</name>
@@ -276,50 +276,62 @@
 					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 					KeyCode::DOT | ModifierFlag::SHIFT_L</autogen>
 			</item>
-			<item>
-				<name>(Hyper) UIOP as MDAS Symbols</name>
-				<identifier>private.hyper_more_mdas</identifier>
-				<autogen>__KeyToKey__ KeyCode::U,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::KEY_8 | ModifierFlag::SHIFT_L</autogen>
-				<autogen>__KeyToKey__ KeyCode::I,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::SLASH</autogen>
-				<autogen>__KeyToKey__ KeyCode::O,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::EQUAL | ModifierFlag::SHIFT_L</autogen>
-				<autogen>__KeyToKey__ KeyCode::P,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::MINUS</autogen>
-			</item>
-			<item>
-				<name>(Hyper) L as Equal Symbol</name>
-				<identifier>private.hyper_more_hash</identifier>
-				<autogen>__KeyToKey__ KeyCode::L,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::EQUAL</autogen>
-			</item>
-			<item>
-				<name>(Hyper) M as Question Mark Symbol</name>
-				<identifier>private.hyper_more_question</identifier>
-				<autogen>__KeyToKey__ KeyCode::M,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::SLASH | ModifierFlag::SHIFT_L</autogen>
-			</item>
-			<item>
-				<name>(Hyper) Angle Brackets and Slash as Caret, Dollar and Hash Symbols (^$#)</name>
-				<identifier>private.hyper_more_caret_dollar_zero</identifier>
-				<autogen>__KeyToKey__ KeyCode::COMMA,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::KEY_6 | ModifierFlag::SHIFT_L</autogen>
-				<autogen>__KeyToKey__ KeyCode::DOT,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::KEY_4 | ModifierFlag::SHIFT_L</autogen>
-				<autogen>__KeyToKey__ KeyCode::SLASH,
-					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-					KeyCode::KEY_3 | ModifierFlag::SHIFT_L</autogen>
-			</item>
 
+		</item>
+
+	</item>
+
+	<item>
+
+		<name>META Bindings (Vim Symbols)</name>
+
+		<item>
+			<name>(Meta) QWER as [ ; , . ^ ] Symbols</name>
+			<identifier>private.meta_qwer</identifier>
+			<autogen>__KeyToKey__ KeyCode::Q,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::SEMICOLON</autogen>
+			<autogen>__KeyToKey__ KeyCode::W,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::COMMA</autogen>
+			<autogen>__KeyToKey__ KeyCode::E,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::DOT</autogen>
+			<autogen>__KeyToKey__ KeyCode::R,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::KEY_6 | ModifierFlag::SHIFT_L</autogen>
+		</item>
+		<item>
+			<name>(Meta) ASDF as MDAS Symbols</name>
+			<identifier>private.meta_asdf</identifier>
+			<autogen>__KeyToKey__ KeyCode::A,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::KEY_8 | ModifierFlag::SHIFT_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::S,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::SLASH</autogen>
+			<autogen>__KeyToKey__ KeyCode::D,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::EQUAL | ModifierFlag::SHIFT_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::F,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::MINUS</autogen>
+		</item>
+		<item>
+			<name>(Meta) ZXCV as [ # ? = $ ] Symbols</name>
+			<identifier>private.meta_zxcv</identifier>
+			<autogen>__KeyToKey__ KeyCode::Z,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::KEY_3 | ModifierFlag::SHIFT_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::X,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::SLASH | ModifierFlag::SHIFT_L</autogen>
+			<autogen>__KeyToKey__ KeyCode::C,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::EQUAL</autogen>
+			<autogen>__KeyToKey__ KeyCode::V,
+				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::KEY_4 | ModifierFlag::SHIFT_L</autogen>
 		</item>
 
 	</item>
