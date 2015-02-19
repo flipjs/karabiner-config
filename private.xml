@@ -276,6 +276,13 @@
 					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 					KeyCode::DOT | ModifierFlag::SHIFT_L</autogen>
 			</item>
+			<item>
+				<name>(Hyper) Spacebar as Spacebar</name>
+				<identifier>private.hyper_more_space</identifier>
+				<autogen>__KeyToKey__ KeyCode::SPACE,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::SPACE</autogen>
+			</item>
 
 		</item>
 
