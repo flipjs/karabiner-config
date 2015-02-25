@@ -3,13 +3,33 @@
 <root>
 
 <devicevendordef>
-<vendorname>USBKEYB</vendorname>
+<vendorname>APPLE</vendorname>
+<vendorid>0x05ac</vendorid>
+</devicevendordef>
+
+<devicevendordef>
+<vendorname>KBP</vendorname>
 <vendorid>0x04d9</vendorid>
 </devicevendordef>
+
+<devicevendordef>
+<vendorname>HHKB</vendorname>
+<vendorid>0x0853</vendorid>
+</devicevendordef>
+
+<deviceproductdef>
+<productname>MBPRO13R</productname>
+<productid>0x025a</productid>
+</deviceproductdef>
 
 <deviceproductdef>
 <productname>V60</productname>
 <productid>0x0112</productid>
+</deviceproductdef>
+
+<deviceproductdef>
+<productname>PRO2TYPES</productname>
+<productid>0x0100</productid>
 </deviceproductdef>
 
 <deviceproductdef>
@@ -22,35 +42,160 @@
 	<name>Personal Custom Function Layer</name>
 
 	<item>
-		<name>Change F19 to Hyper Key</name>
-		<appendix>Requirement: Set a key (i.e. Left Option Key) to F19 in Seil to act as HYPER Key system-wide</appendix>
-		<identifier>private.hyper</identifier>
-		<autogen>
-			__KeyToKey__
-			KeyCode::F19,
-			KeyCode::COMMAND_L,
-			ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-		</autogen>
+
+		<name>Remap Unused Function Keys to Hyper, Meta, and Control Keys (SEIL-reliant)</name>
+
+		<item>
+			<name>Change F19 to Hyper Key</name>
+			<appendix>Requirement: Set a key (i.e. Left Option Key) to F19 in Seil to act as HYPER Key system-wide</appendix>
+			<identifier>private.hyper</identifier>
+			<autogen>
+				__KeyToKey__
+				KeyCode::F19,
+				KeyCode::COMMAND_L,
+				ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+			</autogen>
+		</item>
+
+		<item>
+			<name>Change F18 to Meta Key</name>
+			<appendix>Requirement: Set a key (i.e. Left Control Key) to F18 in Seil to act as META Key system-wide</appendix>
+			<identifier>private.meta</identifier>
+			<autogen>
+				__KeyToKey__
+				KeyCode::F18,
+				KeyCode::COMMAND_L,
+				ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+			</autogen>
+		</item>
+
+		<item>
+			<name>Change F17 to Left Control Key</name>
+			<appendix>Requirement: Set a key (i.e. Capslock Key) to F17 in Seil to act as Left Control Key system-wide</appendix>
+			<identifier>private.control_l</identifier>
+			<autogen>__KeyToKey__ KeyCode::F17, KeyCode::CONTROL_L</autogen>
+		</item>
+
 	</item>
 
 	<item>
-		<name>Change F18 to Meta Key</name>
-		<appendix>Requirement: Set a key (i.e. Left Control Key) to F18 in Seil to act as META Key system-wide</appendix>
-		<identifier>private.meta</identifier>
-		<autogen>
-			__KeyToKey__
-			KeyCode::F18,
-			KeyCode::COMMAND_L,
-			ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-		</autogen>
+
+		<name>Keyboard-specific Bindings</name>
+
+		<item>
+
+			<name>Macbook Pro Internal Keyboard Bindings</name>
+
+			<item>
+				<name>Remap Right Command Key to Hyper Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO13R</device_only>
+				<identifier>private.mbpro13r_option_r_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Option Key to Meta Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO13R</device_only>
+				<identifier>private.mbpro13r_command_r_to_meta</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+		</item>
+
+		<item>
+
+			<name>KBP V60 Bindings</name>
+
+			<item>
+				<name>Remap Right Option Key to Hyper Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+				<identifier>private.v60_option_r_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Command Key to Meta Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+				<identifier>private.v60_command_r_to_meta</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Left Control and Left Option to Down and Up Arrows</name>
+				<identifier>private.down_up</identifier>
+				<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+				<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
+				<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::CURSOR_UP</autogen>
+			</item>
+
+			<item>
+				<name>Remap Menu Key and Right Control to Left and Right Arrows</name>
+				<identifier>private.left_right</identifier>
+				<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+				<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_LEFT</autogen>
+				<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
+			</item>
+
+		</item>
+
+		<item>
+
+			<name>HHKB Pro-2 Type-S Bindings</name>
+
+			<item>
+				<name>Remap Right Command Key to Hyper Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::HHKB, DeviceProduct::PRO2TYPES</device_only>
+				<identifier>private.pro2types_option_r_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Option Key to Meta Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::HHKB, DeviceProduct::PRO2TYPES</device_only>
+				<identifier>private.pro2types_command_r_to_meta</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+		</item>
+
 	</item>
 
-	<item>
-		<name>Change F17 to Left Control Key</name>
-		<appendix>Requirement: Set a key (i.e. Capslock Key) to F17 in Seil to act as Left Control Key system-wide</appendix>
-		<identifier>private.control_l</identifier>
-		<autogen>__KeyToKey__ KeyCode::F17, KeyCode::CONTROL_L</autogen>
-	</item>
 
 	<item>
 
@@ -135,42 +280,6 @@
 	<item>
 
 		<name>HYPER Left-hand Side Bindings</name>
-
-		<item>
-			<name>Remap L-Ctrl and L-Alt to Down and Up Arrows</name>
-			<identifier>private.down_up</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::CURSOR_DOWN</autogen>
-			<autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::CURSOR_UP</autogen>
-		</item>
-
-		<item>
-			<name>Remap Menu Key and R-Ctrl to Left and Right Arrows</name>
-			<identifier>private.left_right</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_LEFT</autogen>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
-		</item>
-
-		<item>
-			<name>Remap Right Command Key to Right Alt Key</name>
-			<identifier>private.right_command_to_right_alt</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
-		</item>
-
-		<item>
-			<name>Remap Right Option Key to Hyper Key</name>
-			<appendix>External keyboard only, Macbook retains its original key function</appendix>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<identifier>private.option_r_to_hyper</identifier>
-			<autogen>
-				__KeyToKey__
-				KeyCode::OPTION_R,
-				KeyCode::COMMAND_L,
-				ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
-			</autogen>
-		</item>
 
 		<item>
 			<name>(Hyper) WASD as Arrow Keys</name>
@@ -290,6 +399,85 @@
 
 	<item>
 
+		<name>HYPER Right-hand Side Bindings (Vim-style)</name>
+
+		<item>
+			<name>[V60 only] (Hyper) PC_Menu and Right Command Keys as PageUp and PageDown Keys</name>
+			<identifier>private.hyper_right_pgup_pgdn</identifier>
+			<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::PAGEUP</autogen>
+			<autogen>__KeyToKey__ KeyCode::COMMAND_R,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::PAGEDOWN</autogen>
+		</item>
+
+		<item>
+			<name> [V60 only] (Hyper) Right Alt and Right Control Keys as Home and End Keys</name>
+			<identifier>private.hyper_right_home_end</identifier>
+			<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+			<autogen>__KeyToKey__ KeyCode::OPTION_R,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::HOME</autogen>
+			<autogen>__KeyToKey__ KeyCode::CONTROL_R,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::END</autogen>
+		</item>
+
+		<item>
+			<name>[V60 only] Remap Bottom-right Modifiers as Vim-style Arrow Keys</name>
+			<identifier>private.vim_style_arrow_keys</identifier>
+			<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_LEFT</autogen>
+			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_DOWN</autogen>
+			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_UP</autogen>
+			<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
+		</item>
+
+		<item>
+			<name>(Hyper) HJKL as Arrow Keys</name>
+			<identifier>private.hyper_right_arrow_keys</identifier>
+			<autogen>--KeyToKey-- KeyCode::H,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::CURSOR_LEFT</autogen>
+			<autogen>--KeyToKey-- KeyCode::J,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::CURSOR_DOWN</autogen>
+			<autogen>--KeyToKey-- KeyCode::K,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::CURSOR_UP</autogen>
+			<autogen>--KeyToKey-- KeyCode::L,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::CURSOR_RIGHT</autogen>
+		</item>
+
+		<item>
+			<name>(Hyper) B and U as Delete and Backspace Keys</name>
+			<identifier>private.hyper_right_delete_backspace</identifier>
+			<autogen>__KeyToKey__ KeyCode::B,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::FORWARD_DELETE</autogen>
+			<autogen>__KeyToKey__ KeyCode::U,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::DELETE</autogen>
+		</item>
+
+		<item>
+			<name>(Hyper) N and M Keys as Backtick and Tilde Keys</name>
+			<identifier>private.hyper_right_backtick_tilde</identifier>
+			<autogen>__KeyToKey__ KeyCode::N,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::BACKQUOTE</autogen>
+			<autogen>__KeyToKey__ KeyCode::M,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L</autogen>
+		</item>
+
+	</item>
+
+	<item>
+
 		<name>META Bindings (Vim Symbols)</name>
 
 		<item>
@@ -339,85 +527,6 @@
 			<autogen>__KeyToKey__ KeyCode::V,
 				ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::KEY_4 | ModifierFlag::SHIFT_L</autogen>
-		</item>
-
-	</item>
-
-	<item>
-
-		<name>HYPER Right-hand Side Bindings (Vim-style)</name>
-
-		<item>
-			<name>(Hyper) PC_Menu and Right Command Keys as PageUp and PageDown Keys</name>
-			<identifier>private.hyper_right_pgup_pgdn</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::PAGEUP</autogen>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_R,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::PAGEDOWN</autogen>
-		</item>
-
-		<item>
-			<name>(Hyper) Right Alt and Right Control Keys as Home and End Keys</name>
-			<identifier>private.hyper_right_home_end</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::OPTION_R,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::HOME</autogen>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_R,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::END</autogen>
-		</item>
-
-		<item>
-			<name>Remap Bottom-right Modifiers as Vim-style Arrow Keys</name>
-			<identifier>private.vim_style_arrow_keys</identifier>
-			<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-			<autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_LEFT</autogen>
-			<autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_DOWN</autogen>
-			<autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::CURSOR_UP</autogen>
-			<autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT</autogen>
-		</item>
-
-		<item>
-			<name>(Hyper) HJKL as Arrow Keys</name>
-			<identifier>private.hyper_right_arrow_keys</identifier>
-			<autogen>--KeyToKey-- KeyCode::H,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::CURSOR_LEFT</autogen>
-			<autogen>--KeyToKey-- KeyCode::J,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::CURSOR_DOWN</autogen>
-			<autogen>--KeyToKey-- KeyCode::K,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::CURSOR_UP</autogen>
-			<autogen>--KeyToKey-- KeyCode::L,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::CURSOR_RIGHT</autogen>
-		</item>
-
-		<item>
-			<name>(Hyper) B and U as Delete and Backspace Keys</name>
-			<identifier>private.hyper_right_delete_backspace</identifier>
-			<autogen>__KeyToKey__ KeyCode::B,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::FORWARD_DELETE</autogen>
-			<autogen>__KeyToKey__ KeyCode::U,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::DELETE</autogen>
-		</item>
-
-		<item>
-			<name>(Hyper) N and M Keys as Backtick and Tilde Keys</name>
-			<identifier>private.hyper_right_backtick_tilde</identifier>
-			<autogen>__KeyToKey__ KeyCode::N,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::BACKQUOTE</autogen>
-			<autogen>__KeyToKey__ KeyCode::M,
-				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L</autogen>
 		</item>
 
 	</item>
