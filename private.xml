@@ -414,7 +414,7 @@
 		</item>
 
 		<item>
-			<name> [V60 only] (Hyper) Right Alt and Right Control Keys as Home and End Keys</name>
+			<name> [V60 only] (Hyper) Right Option and Right Control Keys as Home and End Keys</name>
 			<identifier>private.hyper_right_home_end</identifier>
 			<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
 			<autogen>__KeyToKey__ KeyCode::OPTION_R,
