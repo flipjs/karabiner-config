@@ -119,6 +119,19 @@
 			<name>KBP V60 Bindings</name>
 
 			<item>
+				<name>Remap Backspace Key to Hyper Key</name>
+				<appendix>External keyboard only, Macbook retains its original key function</appendix>
+				<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
+				<identifier>private.v60_backspace_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::DELETE,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
 				<name>Remap Right Option Key to Hyper Key</name>
 				<appendix>External keyboard only, Macbook retains its original key function</appendix>
 				<device_only>DeviceVendor::KBP, DeviceProduct::V60</device_only>
