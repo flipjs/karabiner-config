@@ -215,6 +215,14 @@
 		<name>HYPER Common Bindings</name>
 
 		<item>
+			<name>(Hyper) Esc as Power</name>
+			<identifier>private.hyper_power</identifier>
+			<autogen>__KeyToKey__ KeyCode::ESCAPE,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::VK_CONSUMERKEY_POWER</autogen>
+		</item>
+
+		<item>
 			<name>(Hyper) Number Row as F1 to F12</name>
 			<identifier>private.hyper_common_f1_to_f12</identifier>
 			<autogen>__KeyToKey__ KeyCode::KEY_1,
