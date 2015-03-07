@@ -83,7 +83,7 @@
 				<autogen>
 					__KeyToKey__
 					KeyCode::OPTION_R,
-					KeyCode::COMMAND_L,
+					KeyCode::OPTION_L,
 					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
 				</autogen>
 			</item>
@@ -128,7 +128,7 @@
 				<autogen>
 					__KeyToKey__
 					KeyCode::COMMAND_R,
-					KeyCode::COMMAND_L,
+					KeyCode::OPTION_L,
 					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
 				</autogen>
 			</item>
@@ -160,7 +160,7 @@
 				<autogen>
 					__KeyToKey__
 					KeyCode::OPTION_R,
-					KeyCode::COMMAND_L,
+					KeyCode::OPTION_L,
 					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
 				</autogen>
 			</item>
