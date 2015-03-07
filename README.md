@@ -1,14 +1,4 @@
 ## Karabiner (aka KeyRemap4MacBook) Personal Configuration
 
-This supports 2 layouts. It can also be a mix of both, but extra careful is
-required when remapping modifiers, especially for the arrow keys. See layouts below:
-
-1. Left-hand Side Bindings
-[![Hyper-Left-Hand](http://i.imgur.com/rv176aa.png)](http://i.imgur.com/rv176aa.png)
-
-2. Right-hand Side Bindings (Vim-style)
-[![Hyper-Right-Hand](http://i.imgur.com/cA9cfbV.png)](http://i.imgur.com/cA9cfbV.png)
-
-3. My HHKB Pro-2 Keyboard (WASD arrows plus extras)
-[![Hyper-Right-Hand](http://i.imgur.com/LYHVO2W.png)](http://i.imgur.com/LYHVO2W.png)
-
+My universal layout/keybindings for all (and future) keyboards I use. See
+images inside the repository for visual layout.
