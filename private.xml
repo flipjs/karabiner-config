@@ -373,7 +373,7 @@
 
 	<item>
 
-		<name>Tilde, Backquote, Pipe, Backslash and Semicolon</name>
+		<name>Tilde, Backquote, Pipe, Backslash and Slash</name>
 
 		<item>
 			<name>(Hyper) Q and E Keys as Tilde and Backquote Keys</name>
@@ -398,11 +398,11 @@
 		</item>
 
 		<item>
-			<name>(Hyper) C Keys as Semicolon Key</name>
-			<identifier>private.hyper_semicolon</identifier>
+			<name>(Hyper) C Keys as Slash Key</name>
+			<identifier>private.hyper_slash</identifier>
 			<autogen>__KeyToKey__ KeyCode::C,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
-				KeyCode::SEMICOLON</autogen>
+				KeyCode::SLASH</autogen>
 		</item>
 
 	</item>
