@@ -168,13 +168,24 @@
 			</item>
 
 			<item>
-				<name>Remap PC Menu Key to Right Option Key</name>
+				<name>Remap PC Menu Key to Left Arrow Key</name>
 				<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
-				<identifier>private.v60_menukey_to_option_r</identifier>
+				<identifier>private.v60_menukey_to_left_arrow</identifier>
 				<autogen>
 					__KeyToKey__
 					KeyCode::PC_APPLICATION,
-					KeyCode::OPTION_R
+					KeyCode::CURSOR_LEFT
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Control Key to Right Arrow Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
+				<identifier>private.v60_right_control_to_right_arrow</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_R,
+					KeyCode::CURSOR_RIGHT
 				</autogen>
 			</item>
 
@@ -498,6 +509,14 @@
 	<item>
 
 		<name>Tilde, Backquote, Pipe, and Backslash Keys</name>
+
+		<item>
+			<name>(Hyper) ESC as Backquote and Tilde Key</name>
+			<identifier>private.hyper_esc_as_tilde_backquote</identifier>
+			<autogen>__KeyToKey__ KeyCode::ESCAPE,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::BACKQUOTE</autogen>
+		</item>
 
 		<item>
 			<name>(Hyper) T and Y Keys as Backquote and Tilde Keys</name>
