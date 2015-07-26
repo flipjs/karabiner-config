@@ -144,6 +144,28 @@
 			</item>
 
 			<item>
+				<name>Remap Left Control Key to Left Command Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
+				<identifier>private.v60_control_l_to_command_l</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_L,
+					KeyCode::COMMAND_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Left Command Key to Left Control Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
+				<identifier>private.v60_command_l_to_control_l</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_L,
+					KeyCode::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
 				<name>Remap Right Option Key to Hyper Key</name>
 				<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
 				<identifier>private.v60_option_r_to_hyper</identifier>
