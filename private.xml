@@ -18,6 +18,11 @@
 </devicevendordef>
 
 <devicevendordef>
+<vendorname>TMK</vendorname>
+<vendorid>0xfeed</vendorid>
+</devicevendordef>
+
+<devicevendordef>
 <vendorname>KIIBOHD</vendorname>
 <vendorid>0x1c11</vendorid>
 </devicevendordef>
@@ -35,6 +40,11 @@
 <deviceproductdef>
 <productname>PRO2TYPES</productname>
 <productid>0x0100</productid>
+</deviceproductdef>
+
+<deviceproductdef>
+<productname>HHKBMOD</productname>
+<productid>0xcafe</productid>
 </deviceproductdef>
 
 <deviceproductdef>
@@ -305,6 +315,36 @@
 				<name>Remap Right Option Key to Meta Key</name>
 				<device_only>DeviceVendor::HHKB, DeviceProduct::PRO2TYPES</device_only>
 				<identifier>private.pro2types_command_r_to_meta</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_R,
+					KeyCode::OPTION_L,
+					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+		</item>
+
+		<item>
+
+			<name>HASU's HHKB MOD Bindings</name>
+
+			<item>
+				<name>Remap Right Command Key to Hyper Key</name>
+				<device_only>DeviceVendor::TMK, DeviceProduct::HHKBMOD</device_only>
+				<identifier>private.hhkbmod_option_r_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Option Key to Meta Key</name>
+				<device_only>DeviceVendor::TMK, DeviceProduct::HHKBMOD</device_only>
+				<identifier>private.hhkbmod_command_r_to_meta</identifier>
 				<autogen>
 					__KeyToKey__
 					KeyCode::OPTION_R,
