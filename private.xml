@@ -293,6 +293,39 @@
 				</autogen>
 			</item>
 
+			<item>
+				<name>Remap PC Menu Key to Left Arrow Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_menukey_to_left_arrow</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::PC_APPLICATION,
+					KeyCode::CURSOR_LEFT
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Control Key to Right Arrow Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_right_control_to_right_arrow</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_R,
+					KeyCode::CURSOR_RIGHT
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap UK Section Key to Escape Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_section_to_esc</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::UK_SECTION,
+					KeyCode::ESCAPE
+				</autogen>
+			</item>
+
 		</item>
 
 		<item>
@@ -576,6 +609,14 @@
 			<name>(Hyper) ESC as Backquote and Tilde Key</name>
 			<identifier>private.hyper_esc_as_tilde_backquote</identifier>
 			<autogen>__KeyToKey__ KeyCode::ESCAPE,
+				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+				KeyCode::BACKQUOTE</autogen>
+		</item>
+
+		<item>
+			<name>(Hyper) Section Key as Backquote and Tilde Key</name>
+			<identifier>private.hyper_section_as_tilde_backquote</identifier>
+			<autogen>__KeyToKey__ KeyCode::UK_SECTION,
 				ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
 				KeyCode::BACKQUOTE</autogen>
 		</item>
