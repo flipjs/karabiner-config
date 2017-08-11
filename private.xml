@@ -27,9 +27,14 @@
 <vendorid>0x1c11</vendorid>
 </devicevendordef>
 
+<devicevendordef>
+<vendorname>CATEX</vendorname>
+<vendorid>0x0483</vendorid>
+</devicevendordef>
+
 <deviceproductdef>
-<productname>MBPRO13R</productname>
-<productid>0x025a</productid>
+<productname>MBPRO15R</productname>
+<productid>0x0274</productid>
 </deviceproductdef>
 
 <deviceproductdef>
@@ -57,6 +62,11 @@
 <productid>0x2011</productid>
 </deviceproductdef>
 
+<deviceproductdef>
+<productname>PLUMNANO75</productname>
+<productid>0x5026</productid>
+</deviceproductdef>
+
 <!-- Requirements: -->
 <!--  -->
 <!-- 1. Set Capslock to No Action (Either/Both internal and/or usb keyboards) in Mac Settings. -->
@@ -77,7 +87,7 @@
 
 			<item>
 				<name>Remap Left Control Key to Meta Key</name>
-				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO13R</device_only>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO15R</device_only>
 				<identifier>private.mbpro13r_control_l_to_meta</identifier>
 				<autogen>
 					__KeyToKey__
@@ -89,7 +99,7 @@
 
 			<item>
 				<name>Remap Left Control Key to Hyper Key</name>
-				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO13R</device_only>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO15R</device_only>
 				<identifier>private.mbpro13r_control_l_to_hyper</identifier>
 				<autogen>
 					__KeyToKey__
@@ -101,7 +111,7 @@
 
 			<item>
 				<name>Remap Right Command Key to Hyper Key</name>
-				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO13R</device_only>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO15R</device_only>
 				<identifier>private.mbpro13r_command_r_to_hyper</identifier>
 				<autogen>
 					__KeyToKey__
@@ -113,7 +123,7 @@
 
 			<item>
 				<name>Remap Right Option Key to Meta Key</name>
-				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO13R</device_only>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO15R</device_only>
 				<identifier>private.mbpro13r_option_r_to_meta</identifier>
 				<autogen>
 					__KeyToKey__
@@ -214,6 +224,104 @@
 				<name>Remap Right Control Key to Right Arrow Key</name>
 				<device_only>DeviceVendor::USBKEYB, DeviceProduct::V60</device_only>
 				<identifier>private.v60_right_control_to_right_arrow</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_R,
+					KeyCode::CURSOR_RIGHT
+				</autogen>
+			</item>
+
+		</item>
+
+		<item>
+
+			<name>Plum Nano 75 Bindings</name>
+
+			<item>
+				<name>Remap Left Control Key to Meta Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_control_l_to_meta</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_L,
+					KeyCode::OPTION_L,
+					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Left Control Key to Hyper Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_control_l_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_L,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Left Control Key to Left Command Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_control_l_to_command_l</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::CONTROL_L,
+					KeyCode::COMMAND_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Left Command Key to Left Control Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_command_l_to_control_l</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_L,
+					KeyCode::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Option Key to Hyper Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_option_r_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap PC Menu Key to Meta Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_menukey_to_meta</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::PC_APPLICATION,
+					KeyCode::OPTION_L,
+					ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap PC Menu Key to Left Arrow Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_menukey_to_left_arrow</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::PC_APPLICATION,
+					KeyCode::CURSOR_LEFT
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Right Control Key to Right Arrow Key</name>
+				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
+				<identifier>private.pn75_right_control_to_right_arrow</identifier>
 				<autogen>
 					__KeyToKey__
 					KeyCode::CONTROL_R,
