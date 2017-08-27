@@ -354,6 +354,28 @@
 			<name>Filco Bindings</name>
 
 			<item>
+				<name>Remap Left Option Key to Left Command Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_option_l_to_command_l</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_L,
+					KeyCode::COMMAND_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>Remap Left Command Key to Left Option Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_command_l_to_option_l</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::COMMAND_L,
+					KeyCode::OPTION_L
+				</autogen>
+			</item>
+
+			<item>
 				<name>Remap Left Control Key to Meta Key</name>
 				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
 				<identifier>private.filco_control_l_to_meta</identifier>
