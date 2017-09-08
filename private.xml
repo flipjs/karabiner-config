@@ -122,6 +122,18 @@
 			</item>
 
 			<item>
+				<name>Remap Right Option Key to Hyper Key</name>
+				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO15R</device_only>
+				<identifier>private.mbpro13r_option_r_to_hyper</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::OPTION_R,
+					KeyCode::COMMAND_L,
+					ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
+				</autogen>
+			</item>
+
+			<item>
 				<name>Remap Right Option Key to Meta Key</name>
 				<device_only>DeviceVendor::APPLE, DeviceProduct::MBPRO15R</device_only>
 				<identifier>private.mbpro13r_option_r_to_meta</identifier>
