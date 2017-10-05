@@ -468,6 +468,41 @@
 				</autogen>
 			</item>
 
+			<item>
+				<name>Remap Backtick Key to Escape Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_backtick_to_esc</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::BACKQUOTE,
+					KeyCode::ESCAPE
+				</autogen>
+			</item>
+
+			<item>
+				<name>(Hyper) J as Tilde Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_hyper_j_to_tilde</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::J,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::BACKQUOTE | ModifierFlag::SHIFT_L
+				</autogen>
+			</item>
+
+			<item>
+				<name>(Hyper) Quote as Backtick Key</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_hyper_quote_to_backtick</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::QUOTE,
+					ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+					KeyCode::BACKQUOTE
+				</autogen>
+			</item>
+
 		</item>
 
 		<item>
