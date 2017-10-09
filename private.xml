@@ -320,12 +320,12 @@
 			</item>
 
 			<item>
-				<name>Remap PC Menu Key to Left Arrow Key</name>
+				<name>Remap Right Option Key to Left Arrow Key</name>
 				<device_only>DeviceVendor::CATEX, DeviceProduct::PLUMNANO75</device_only>
-				<identifier>private.pn75_menukey_to_left_arrow</identifier>
+				<identifier>private.pn75_right_option_to_left_arrow</identifier>
 				<autogen>
 					__KeyToKey__
-					KeyCode::PC_APPLICATION,
+					KeyCode::OPTION_R,
 					KeyCode::CURSOR_LEFT
 				</autogen>
 			</item>
@@ -364,6 +364,17 @@
 		<item>
 
 			<name>Filco Bindings</name>
+
+			<item>
+				<name>Remap Application Key to Right Option</name>
+				<device_only>DeviceVendor::USBKEYB, DeviceProduct::FILCO</device_only>
+				<identifier>private.filco_application_to_option_r</identifier>
+				<autogen>
+					__KeyToKey__
+					KeyCode::PC_APPLICATION,
+					KeyCode::OPTION_R
+				</autogen>
+			</item>
 
 			<item>
 				<name>Remap Left Option Key to Left Command Key</name>
